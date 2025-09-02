@@ -39,7 +39,7 @@ subjects = ["Math", "Science", "English"]
 default_scores = dict.fromkeys(subjects, 0)
 print(f"Default scores: {default_scores}")
 
-# setdefault() method
+# setdefault() method การกำหนดค่าเริ่มต้น
 student_grades = {}
 student_grades.setdefault("Alice", []).append(85)
 student_grades.setdefault("Alice", []).append(92)

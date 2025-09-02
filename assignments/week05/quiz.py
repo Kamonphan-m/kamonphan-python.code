@@ -1,17 +1,15 @@
-
 def contact_book():
     """
     Contact management system using dictionaries
     Each contact: {"name": str, "phone": str, "email": str, "category": str}
     """
     
-    # Initialize empty contacts dictionary
+    # Initialize empty contacts dictionary การจัดการบัญชี
     # Key: contact name (string), Value: contact info (dictionary)
     contacts = {
         "John Doe": {"phone": "123-456-7890", "email": "john@example.com", "category": "friend"},
         "Jane Smith": {"phone": "987-654-3210", "email": "jane@example.com", "category": "work"},
     }
-    
     def add_contact():
         """Add a new contact to the address book"""
         print("\n=== Add New Contact ===")
@@ -37,6 +35,7 @@ def contact_book():
         print(f"Contact '{name}' added successfully!")
     
     def view_contact():
+
         """View details of a specific contact"""
         print("\n=== View Contact ===")
         

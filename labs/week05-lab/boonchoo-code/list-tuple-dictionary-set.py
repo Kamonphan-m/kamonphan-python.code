@@ -14,7 +14,7 @@ phone_book = {
     "Charlie": "555-123-4567"
 }
 
-# 3. Counting occurrences
+# 3. Counting occurrences สร้างข้อความ ใน dictionary อาจารย์บอกว่าไม่มีความจำเป็นที่จะต้องเขียน แนะนำให้ใช้ list
 text = "hello world hello python"
 word_count = {}
 for word in text.split():
@@ -39,7 +39,7 @@ user_code = "B002"
 if user_code in valid_codes:  # O(1) average time
     print("Valid code!")
 
-# 4. Removing duplicates from lists
+# 4. Removing duplicates from lists สามารถลบข้อมูลที่ซ้ำกันได้ เช่นคำถาม จะแปลงเซ็ทนี้ที่กำหนดให้ ให้เข้าข้อมูลไม่ซ้ำกัน
 numbers_with_duplicates = [1, 2, 2, 3, 3, 3, 4, 5]
 unique_numbers = list(set(numbers_with_duplicates))
 print(f"Unique numbers: {unique_numbers}")

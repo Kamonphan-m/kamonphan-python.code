@@ -8,12 +8,12 @@
 print("=== PART 1: BASIC FUNCTIONS ===")
 
 # Example 1: Simple function without parameters
-def say_hello():
+def say_hello(): เป็นฟังก์ชันที่ไม่มีการรับค่า
     """A simple function that prints a greeting"""
     print("Hello, World!")
     print("Welcome to Python functions!")
 
-# Calling the function
+# Calling the function การเรียกใช้ฟังก์ชัน
 print("Calling say_hello():")
 say_hello()
 print()
@@ -52,7 +52,7 @@ def introduce_person(name, age, city):
     print(f"I live in {city}.")
     print()
 
-print("Calling introduce_person:")
+print("Calling introduce_person:") ส่งอย่างน้อย 1
 introduce_person("Diana", 25, "New York")
 introduce_person("Eve", 30, "Los Angeles")
 

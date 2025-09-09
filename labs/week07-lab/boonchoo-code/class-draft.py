@@ -9,7 +9,6 @@ class ClassName:
         # Instance method
         return something
 
-
-myObj = ClassName(parameters)
-print(myObj.attribute)
-resultFromMethod = myObj.method_name()
+myObj = ClassName(parameters) #ตอนปั้มต้องส่งค่ามา พารามิเตอร์
+print(myObj.attribute) #คือค่าของวัตถุที่เกิดจากค่าไตรยาง
+resultFromMethod = myObj.method_name() 

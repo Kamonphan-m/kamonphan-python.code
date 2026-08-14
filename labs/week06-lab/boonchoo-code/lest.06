@@ -1,0 +1,21 @@
+def convert_currency(amount, target_currency):
+    # ปรับเป็นตัวพิมพ์ใหญ่ทั้งหมดเพื่อป้องกันความผิดพลาดจากการพิมพ์
+    currency = target_currency.upper()
+
+    if currency == "USD":
+        # อัตราแลกเปลี่ยน: 1 USD = 32 THB
+        result = amount / 32
+        print(f"{amount} THB = {result:.1f} USD")
+
+    elif currency == "JPY":
+        # อัตราแลกเปลี่ยนตามโจทย์: 1 JPY = 22 THB
+        result = amount / 22
+        print(f"{amount} THB = {result:.1f} JPY")
+
+    else:
+        print("ไม่รองรับสกุลเงินนี้")
+
+
+# --- ทดสอบการใช้งานฟังก์ชัน ---
+convert_currency(100, "USD")
+convert_currency(100, "JPY")

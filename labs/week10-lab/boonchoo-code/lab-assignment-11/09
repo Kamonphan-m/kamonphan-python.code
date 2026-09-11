@@ -1,79 +1,50 @@
-# สร้างไฟล์ใหม่ใน FOLDER /assignments/week09/
-# lab-assignment-1109.py
-
-def calculate_electricity_cost(units):
-    """
-    ฟังก์ชันคำนวณค่าไฟฟ้าแบบขั้นบันได และแสดงรายละเอียดค่าใช้จ่าย
-    """
-    # ตรวจสอบเงื่อนไข: จำนวนหน่วยไฟฟ้าต้องไม่ติดลบ
-    if units < 0:
-        print("Electricity units cannot be negative.")
-        return
-
-    total_cost = 0.0
-    print("\nElectricity Cost Details:")
-
-    # ช่วงที่ 1: 1-50 หน่วยแรก อัตรา 2.50 บาท/หน่วย
-    if units > 0:
-        u1 = min(units, 50)
-        cost1 = u1 * 2.50
-        print(f"1-50 units: {cost1:.2f} Baht" if u1 == 50 else f"1-{u1:.0f} units: {cost1:.2f} Baht")
-        total_cost += cost1
-
-    # ช่วงที่ 2: 51-100 หน่วย อัตรา 3.00 บาท/หน่วย
-    if units > 50:
-        u2 = min(units - 50, 50)
-        cost2 = u2 * 3.00
-        upper_limit = 50 + u2
-        print(f"51-100 units: {cost2:.2f} Baht" if u2 == 50 else f"51-{upper_limit:.0f} units: {cost2:.2f} Baht")
-        total_cost += cost2
-
-    # ช่วงที่ 3: 101-200 หน่วย อัตรา 3.50 บาท/หน่วย
-    if units > 100:
-        u3 = min(units - 100, 100)
-        cost3 = u3 * 3.50
-        upper_limit = 100 + u3
-        print(f"101-200 units: {cost3:.2f} Baht" if u3 == 100 else f"101-{upper_limit:.0f} units: {cost3:.2f} Baht")
-        total_cost += cost3
-
-    # ช่วงที่ 4: มากกว่า 200 หน่วย อัตรา 4.00 บาท/หน่วย
-    if units > 200:
-        u4 = units - 200
-        cost4 = u4 * 4.00
-        print(f"201-{units:.0f} units: {cost4:.2f} Baht")
-        total_cost += cost4
-
-    # ค่าบริการคงที่ 25 บาท/เดือน
-    service_fee = 25.00
-    print(f"Service fee: {service_fee:.2f} Baht")
-    total_cost += service_fee
-
-    # ยอดรวมสุทธิ
-    print(f"Total cost: {total_cost:.2f} Baht")
-
-
-def main():
-    """
-    ฟังก์ชันหลักสำหรับแสดงเมนูและรับค่าจากผู้ใช้
-    """
-    while True:
-        print("===== Electricity Calculator Program =====")
-        print("1. Calculate Electricity Cost")
-        print("2. Exit Program")
-        choice = input("Select menu: ")
-
-        if choice == '1':
-            try:
-                units = float(input("\nEnter electricity units: "))
-                calculate_electricity_cost(units)
-            except ValueError:
-                print("Invalid input! Please enter a numerical value.")
-            print()  # เว้นบรรทัดเพื่อความสวยงาม
-        elif choice == '2':
-            print("Exiting program. Goodbye!")
+units = 250
+def  calculate_electricity_cost(units) :
+    if units > 200 :
+        cost = (2.50 * 50) + (3.00 * 50) + (3.50 * 50) + ((units - 200 ) * 4.00) + 25
+        print("1-50 หน่วย: 125.00 บาท")
+        print("51-100 หน่วย: 150.00 บาท")
+        print("101-200 หน่วย: 350.00 บาท")
+        print(f"201-{units} หน่วย: {(units - 200) * 3.50}บาท")
+        print("ค่าบริการ: 25.00 บาท")
+        print("รวมค่าไฟฟ้าทั้งสิ้น", cost)
+       
+    elif units > 100 :
+        cost = (2.50 * 50) + (3.00 * 50) + ((units - 100 ) * 3.50)  + 25
+        print("1-50 หน่วย: 125.00 บาท")
+        print("51-100 หน่วย: 150.00 บาท")
+        print(f"101-{units} หน่วย: {(units - 100) * 3.50}บาท")
+        print("ค่าบริการ: 25.00 บาท")
+        print("รวมค่าไฟฟ้าทั้งสิ้น", cost)
+ 
+    elif units > 50 :
+        cost = (2.50 * 50) + ((units - 50 ) * 3.00) + 25
+        print("1-50 หน่วย: 125.00 บาท")
+        print(f"51-{units} หน่วย: {(units - 50) * 3.00}บาท")
+        print("ค่าบริการ: 25.00 บาท")
+        print("รวมค่าไฟฟ้าทั้งสิ้น", cost)
+ 
+    elif units > 0 :
+        cost = (2.50 * units) + 25
+        print(f"1-{units} หน่วย: {2.50 * units}บาท")
+        print("ค่าบริการ: 25.00 บาท")
+        print("รวมค่าไฟฟ้าทั้งสิ้น", cost)
+    else :
+        print("จำนวนไฟฟ้าต้องไม่ติดลบ")
+ 
+units = int(input("กรอกจำนวนไฟฟ้า :"))
+calculate_electricity_cost(units)
+ 
+print("==========โปรแกรมคำนวณไฟฟ้า==========")
+while(True):
+    print("1.คำนวณไฟฟ้า")
+    print("2.ออกจากโปรแกรม")
+    choice = input(" เลือกเมนู")
+ 
+    if choice == "1":
+        units = int(input("กรอกจำนวนหน่วยไฟฟ้า"))
+        calculate_electricity_cost(units)
+    elif choice == "2":
             break
-        else:
-            print("Invalid menu selection. Please try again.\n")
-
-if __name__ == "__main__":
-    main()
+    else:
+        print("ให้แจ้งว่าเลือกเมนูไม่ถูกต้อง")
